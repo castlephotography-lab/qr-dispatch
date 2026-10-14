@@ -1,0 +1,11 @@
+QR Dispatch includes the following locally bundled open-source libraries:
+
+qrcode-generator 1.4.4
+Copyright (c) 2009 Kazuhiko Arase
+MIT License. The license notice is retained in qrcode.js and qrcode_UTF8.js.
+https://www.npmjs.com/package/qrcode-generator
+
+bwip-js 4.5.1
+Copyright (c) 2011-2024 Mark Warren
+MIT License. See LICENSE-bwip-js.txt in this directory.
+https://github.com/metafloor/bwip-js

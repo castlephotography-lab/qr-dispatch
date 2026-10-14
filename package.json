@@ -1,0 +1,21 @@
+{
+  "name": "qr-dispatch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline-first warehouse QR and Code 128 print sheet generator",
+  "type": "module",
+  "scripts": {
+    "serve": "node tests/serve.mjs",
+    "test": "node tests/verify.mjs",
+    "examples": "node tests/create-examples.mjs"
+  },
+  "devDependencies": {
+    "@zxing/library": "0.21.3",
+    "bwip-js": "4.5.1",
+    "jsqr": "1.4.0",
+    "playwright": "1.62.1",
+    "pngjs": "7.0.0",
+    "qrcode-generator": "1.4.4",
+    "sharp": "0.35.5"
+  }
+}

@@ -1,0 +1,151 @@
+@page {
+  size: letter portrait;
+  margin: .37in;
+}
+
+html, body {
+  width: auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #fff !important;
+  color: #000 !important;
+}
+
+.app-shell { display: none !important; }
+
+#print-root {
+  display: block !important;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.print-page {
+  width: 100%;
+  break-after: page;
+  page-break-after: always;
+}
+
+.print-page:last-child { break-after: auto; page-break-after: auto; }
+
+.print-section {
+  width: 100%;
+  overflow: hidden;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.print-page.mode-qr .print-section { height: 2.30in; }
+.print-page.mode-code128 .print-section { height: 1.52in; }
+.print-page.mode-both .print-section { height: 3.05in; }
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  height: .27in;
+  margin: 0 0 .07in;
+  border-bottom: 2.2pt solid #000;
+  font-size: 12.5pt;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  line-height: .23in;
+}
+
+.section-heading.workin-heading { letter-spacing: .06em; }
+
+.print-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: .18in;
+  align-items: start;
+}
+
+.print-item {
+  min-width: 0;
+  text-align: center;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.print-item.blank { min-height: 1px; }
+
+.symbol {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.symbol svg {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  shape-rendering: crispEdges;
+  background: #fff;
+}
+
+.symbol.qr { height: 1.46in; }
+.symbol.qr svg { width: 1.42in; height: 1.42in; }
+
+.symbol.code128 { height: .77in; }
+.symbol.code128 svg { width: 100%; max-width: 1.74in; height: .68in; }
+
+.print-page.mode-both .symbol.qr { height: 1.44in; }
+.print-page.mode-both .symbol.qr svg { width: 1.39in; height: 1.39in; }
+.print-page.mode-both .symbol.code128 { height: .67in; margin-top: .02in; }
+.print-page.mode-both .symbol.code128 svg { height: .60in; }
+
+.identifier {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: .29in;
+  margin: .015in auto 0;
+  color: #000;
+  font-size: 16pt;
+  font-weight: 800;
+  line-height: 1.02;
+  text-align: center;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.identifier.short { font-size: 18pt; }
+.identifier.long { font-size: 12pt; line-height: 1.04; }
+.identifier.xlong { font-size: 9pt; line-height: 1.03; }
+
+.status-checks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .12in;
+  height: .19in;
+  margin-top: .035in;
+  font-size: 6.8pt;
+  font-weight: 700;
+  letter-spacing: .025em;
+  white-space: nowrap;
+}
+
+.check-label { display: inline-flex; align-items: center; gap: .035in; }
+
+.check-box {
+  display: inline-block;
+  width: .125in;
+  height: .125in;
+  border: .85pt solid #000;
+  background: #fff;
+}
+
+.print-page.mode-code128 .identifier { min-height: .24in; margin-top: 0; font-size: 14pt; }
+.print-page.mode-code128 .identifier.long { font-size: 11pt; }
+.print-page.mode-code128 .identifier.xlong { font-size: 8.5pt; }
+.print-page.mode-code128 .status-checks { margin-top: .015in; }
+
+.print-error {
+  padding: .25in;
+  border: 2px solid #000;
+  font: 12pt Arial, sans-serif;
+}
